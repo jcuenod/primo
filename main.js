@@ -33,6 +33,7 @@ root.innerHTML = `
 	height: 48px;
 }
 .primoextension-container .pext-item {
+	cursor: pointer;
     margin: 2px;
 	border: 1px solid #ddd;
 	border-radius: 4px;
