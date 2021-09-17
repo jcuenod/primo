@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "Primo",
+  "version": "1.0",
+  "description": "Give full list of checked out books",
+
+  "icons": {
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://i-share-whe.primo.exlibrisgroup.com/*"],
+      "js": ["main.js"]
+    }
+  ]
+
+}
