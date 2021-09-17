@@ -22,13 +22,23 @@ root.innerHTML = `
 .primoextension-container > div {
     margin: 5px;
 }
-.primoextension-container > div > div {
+.pext-loading {
+	display: flex;
+	height: 90vh;
+	justify-content: center;
+	align-items: center;
+}
+.pext-loading > img {
+	width: 48px;
+	height: 48px;
+}
+.primoextension-container .pext-item {
     margin: 2px;
 	border: 1px solid #ddd;
 	border-radius: 4px;
 	padding: 5px;
 }
-.primoextension-container > div > div:hover {
+.primoextension-container .pext-item:hover {
 	background: #ddd;
 }
 .pext-title {
@@ -49,7 +59,12 @@ root.innerHTML = `
 </style>
 `
 document.body.appendChild(root)
+const spinnerUrl = browser.runtime.getURL("images/spinner.svg")
 const container = document.createElement("div")
+container.innerHTML = `
+<div class="pext-loading">
+	<img src="${spinnerUrl}" />
+</div>`
 root.appendChild(container)
 
 // Utility functions
@@ -78,7 +93,7 @@ const formatDate = duedate => {
 }
 
 const formatLoan = loan => `
-<div>
+<div class="pext-item">
 	<div class="pext-title" title="${loan.title}">${loan.title}</div>
 	<div class="pext-author">${loan.author}</div>
 	<div class="pext-duedate ${nearDue(loan.duedate) ? 'due' : ''}">${formatDate(loan.duedate)}</div>

@@ -12,6 +12,8 @@
       "matches": ["*://i-share-whe.primo.exlibrisgroup.com/*"],
       "js": ["main.js"]
     }
-  ]
+  ],
+
+  "web_accessible_resources": ["images/spinner.svg"]
 
 }
